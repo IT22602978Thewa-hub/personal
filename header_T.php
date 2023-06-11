@@ -44,8 +44,8 @@
                 <li><a href="./view_packages_T_pradi.php">Safari Hotels</a></li>
                 <li class="drop"><a href="#">Safari Tours<i class="fa-solid fa-caret-down"></i></a>
                     <ul class="submenu">
-                        <li><a href="">Safari Jeep Reservation</a></li>
-                        <li><a href="#">Camping Reservation</a></li>
+                        <li><a href="./r_jeepreservation.html">Safari Jeep Reservation</a></li>
+                        <li><a href="./r_campingreservation.html">Camping Reservation</a></li>
                     </ul>
                 </li>
                 <li><a href="./Acontact.php">Contact Us</a></li>
