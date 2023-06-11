@@ -3,7 +3,7 @@
 <?php
 include 'dbh.inc.php';
 
-if (isset($_POST['reserve']) && !empty($_GET['reserve'])){
+if (isset($_POST['reserve'])){
     $Full_Name = $_POST["FullName"];
     $Email = $_POST["Email"];
     $Booking_For = $_POST["BookingFor"];
