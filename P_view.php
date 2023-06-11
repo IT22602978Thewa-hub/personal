@@ -4,7 +4,7 @@
 include 'dbh.inc.php';
 //$UName = $_SESSION['userName'];
 //$sql = "SELECT * FROM hotel_reservation ORDER BY Hotel_Res_ID DESC";
-$sql = "SELECT * FROM hotel_reservation ORDER BY Hotel_Res_ID ";
+$sql = "SELECT * FROM hotel_reservation ORDER BY Hotel_Res_ID DESC";
 //WHERE User_ID = $UName
 $result = $conn->query($sql);
 
@@ -70,7 +70,7 @@ $result = $conn->query($sql);
             <td> <!-- action buttons -->
                 <div class = "buttonE">
                     <a href="P_edit.php?edit=<?php echo $row['Hotel_Res_ID']; ?>">Edit</a>
-                    <a href="P_delete.php?delete=<?php echo $row['Hotel_Res_ID']; ?>" id = "del">Delete</a>
+                    <a href="P_delete.php?delete=<?php echo $row['Hotel_Res_ID']; ?>" id = "del" onclick = "return deleteRes()">Delete</a>
                 </div>
             </td>
         </tr>

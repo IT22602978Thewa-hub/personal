@@ -63,6 +63,14 @@ function validateForm() {
     return true;
   }
   
-  
+//delete package
+function deletePkg() {
+  var txt = "Are you sure you want to delete this package?";
+  if (confirm(txt)) {
+      return true; // Proceed with the deletion
+  } else {
+      return false; // Cancel the deletion
+  }
+}
 
   

@@ -67,7 +67,7 @@
                             
                             <form action="delete_packages_T.inc.php" method="GET">
                                 <input type="hidden" name="delete" value="<?php echo $row['Package_ID']; ?>">
-                                <button type="submit" class="delete_T"><i class="material-icons">delete</i></button>
+                                <button type="submit" class="delete_T" onclick = "return deletePkg()"><i class="material-icons">delete</i></button>
                                 </form>
                             </td>
                             

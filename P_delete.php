@@ -2,7 +2,7 @@
 <?php
 include 'dbh.inc.php';
 
-if(isset($_GET['delete'])){
+if(isset($_GET['delete']) && !empty($_GET['delete'])){
     $Hotel_Res_ID = $_GET['delete'];
 
     $deleteQuery = "DELETE FROM `hotel_reservation` WHERE Hotel_Res_ID = '$Hotel_Res_ID'";

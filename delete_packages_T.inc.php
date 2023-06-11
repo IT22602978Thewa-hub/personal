@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET['delete'])){
+if(isset($_GET['delete']) && !empty($_GET['delete'])){
     $package_Id=$_GET['delete'];
 
     require_once 'dbh.inc.php';
