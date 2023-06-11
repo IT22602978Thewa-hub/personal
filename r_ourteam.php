@@ -63,41 +63,41 @@
    <div class="team">
       <div class="text">
          <div class="about">
-            <img src="images/Our team/Samidi.jpg" alt="ramindu1" width="700px" height="800px">
-            <h3>Ramindu Nimesh</h3>
-            <h4>IT22577160</h4>
+            <img src="images/Our team/Thewan.jpg " alt="ramindu1" width="700px" height="800px">
+            <h3>Damnidu T W T</h3>
+            <h4>IT22602978</h4>
          </div>
       </div>
 
       <div class="text">
          <div class="about">
-            <img src="images/Our team/ramidu.jpg" alt="ramindu2" width="700px" height="800px">
-            <h3>Ramindu Nimesh</h3>
-            <h4>IT22577160</h4>
-         </div>
-      </div>
-
-      <div class="text">
-         <div class="about">
-            <img src="images/Our team/Adithya.jpg" alt="ramindu3" width="700px" height="800px">
-            <h3>Ramindu Nimesh</h3>
-            <h4>IT22577160</h4>
-         </div>
-      </div>
-
-      <div class="text">
-         <div class="about">
-            <img src="images/Our team/pradicksha.jpg" alt="ramindu4" width="700px" height="800px">
-            <h3>P Pradicksha</h3>
+            <img src="images/Our team/pradicksha.jpg " alt="ramindu2" width="700px" height="800px">
+            <h3>Pradicksha P</h3>
             <h4>IT22603418</h4>
          </div>
       </div>
 
       <div class="text">
          <div class="about">
-            <img src="images/Our team/Thewan.jpg" alt="ramindu5" width="700px" height="800px">
-            <h3>Damnidu T W T</h3>
-            <h4>IT22602978</h4>
+            <img src="images/Our team/Samidi.jpg" alt="ramindu3" width="700px" height="800px">
+            <h3>Gamage S S J</h3>
+            <h4>IT22607232</h4>
+         </div>
+      </div>
+
+      <div class="text">
+         <div class="about">
+            <img src="images/Our team/Adithya.jpg " alt="ramindu4" width="700px" height="800px">
+            <h3>Jeewandara O C A</h3>
+            <h4>IT22607300</h4>
+         </div>
+      </div>
+
+      <div class="text">
+         <div class="about">
+            <img src="images/Our team/ramidu.jpg " alt="ramindu5" width="700px" height="800px">
+            <h3>Nimes R H R</h3>
+            <h4>IT22577160</h4>
          </div>
       </div>
    </div>
