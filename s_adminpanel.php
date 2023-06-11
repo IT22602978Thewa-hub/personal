@@ -39,8 +39,8 @@ $Username = $_SESSION['userName'];
               <li><a href="./view_packages_T_pradi.php">Safari Hotels</a></li>
               <li class="drop"><a href="#">Safari Tours<i class="fa-solid fa-caret-down"></i></a>
                   <ul class="submenu">
-                      <li><a href="./jeepreservation.html" target="_blank">Safari Jeep Reservation</a></li>
-                      <li><a href="./campingreservation.html" target="_blank">Camping Reservation</a></li>
+                      <li><a href="./r_jeepreservation.html" target="_blank">Safari Jeep Reservation</a></li>
+                      <li><a href="./r_campingreservation.html" target="_blank">Camping Reservation</a></li>
                   </ul>
               </li>
               <li><a href="./Acontact.php">Contact Us</a></li>

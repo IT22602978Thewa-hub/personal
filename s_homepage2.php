@@ -62,7 +62,6 @@ $Username = $_SESSION['userName'];
       <h1>Seek your amazing journey!!</h1>
       <div class="button1">
          <a href="./s_viewprofile.php">User Profile</a>
-         <a href="./s_viewprofile.php">Visit FAQ</a>
       </div>
    </div>
 

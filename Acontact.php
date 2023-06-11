@@ -77,7 +77,7 @@ $query = "INSERT INTO contactus (User_Name, Email, Phone, Message) VALUES ('$nam
                 <li><a href="./Acontact.php">Contact Us</a></li>
                 <li><a href="./r_ourteam.php">Meet our team</a></li>
                 <li><a href="./Aaboutus.php">About Us</a></li>
-                <<?php if(isset($Username)){ ?>
+                <?php if(isset($Username)){ ?>
                         <li class="sign"><a href="./s_viewprofile.php"><?php echo "HI " . $Username; ?></a></li>
                     <?php } else { ?>
                         <li class="sign"><a href="./s_loginForm.html">Login</a></li>

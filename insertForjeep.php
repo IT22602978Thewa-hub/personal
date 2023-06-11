@@ -21,7 +21,8 @@
       $request = $_POST['request'];
 
       $uname = $_SESSION['userName'];  
-      $sql = "INSERT INTO jeepreservation(name, phone, email, date, country,loacation,package,Participants,tourguide,duration,request,userName) VALUES('$name','$phone','$email','$date','$country','$location','$package','$Participants','$tourguide','$duration','$request','$uname')";
+      $sql = "INSERT INTO jeepreservation(name, phone, email, date, country,loacation,package,Participants,tourguide,duration,request,userName) 
+      VALUES('$name','$phone','$email','$date','$country','$location','$package','$Participants','$tourguide','$duration','$request','$uname')";
 
       $result = mysqli_query($conn,$sql);
 

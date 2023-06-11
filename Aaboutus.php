@@ -60,7 +60,7 @@
             <div class="content">
                 <h3>Why WILD TREK Special ...</h3>
                 <p>With a team of highly experienced wildlife enthusiasts and conservationists, Wildtrek brings a wealth of knowledge and expertise to the table. We have spent years studying and understanding wildlife behavior, habitats, and conservation efforts, ensuring that our users receive the most accurate and up-to-date information. <br>we believe that every safari experience should be unique and tailored to individual preferences. Our website offers intuitive tools that allow users to customize their safari itineraries, taking into account their desired destinations, wildlife sightings, accommodation preferences, and budget constraints. We go the extra mile to ensure that your wildlife adventure is personalized just for you.</p>
-                <a href="../adii.php/Acontact.php" class="btn1">We here to support you</a>
+                <a href="./Acontact.php" class="btn1">We here to support you</a>
             </div>
         </section>
 </div>

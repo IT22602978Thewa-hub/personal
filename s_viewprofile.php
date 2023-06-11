@@ -43,10 +43,9 @@ $UserID = $_SESSION['uID'];
                     </ul>
                 </li>
                 <li><a href="./Acontact.php">Contact Us</a></li>
-                <li><a href="#">Reserve Tours</a></li>
                 <li><a href="./P_reserve.php">Reserve Hotels</a></li>
                 <li class = "sign"><a href ="./s_viewprofile.php">Hi, <?php echo $_SESSION['userName']; ?></a></li>
-                    <li class="sign"><a href ="./s_RegisterForm.php"><i class="fa-solid fa-user-plus"></i> Logout
+                    <li class="sign"><a href ="./r_main.html"><i class="fa-solid fa-user-plus"></i> Logout
                         </button>
                     </li>
                           </ul>

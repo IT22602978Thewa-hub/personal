@@ -14,7 +14,7 @@ function deleteData($uName){
     
     if($conn->query($sql) === TRUE) {
         echo "Deleted Successfully";
-     
+        header('location: s_RegisterForm.html');
         exit();
     } else {
         echo "Error: " . $conn->error;
