@@ -56,94 +56,93 @@ $UserID = $_SESSION['uID'];
 <?php
     include_once('dbh.inc.php');
 
-if (isset($_POST['btn2'])) {
+    if (isset($_POST['btn2'])) {
+        $name = $_SESSION['userName'];
+        $fullName = $_POST['fullName'];
+        $uName = $_POST['userName'];
+        $Email = $_POST['email'];
+        $pwd = $_POST['password'];
+        $type = $_POST['citizens'];
+        $gender = $_POST['gender'];
+        $nic = $_POST['nic'];
+        $phone = $_POST['contact'];
+    
+        $result = mysqli_query($conn, "UPDATE users SET  userName='$uName',fullName='$fullName',email='$Email', Password='$pwd', cType='$type', gender='$gender', nicPass='$nic', contactNo='$phone' WHERE userName='$name'");
+    
+        header("location:s_viewprofile.php");
+    }
+    ?>
+    
+    <?php
     $name = $_SESSION['userName'];
-    $fullName = $_POST['fullName'];
-    $uName = $_POST['userName'];
-    $Email = $_POST['email'];
-    $pwd = $_POST['password'];
-    $type = $_POST['citizens'];
-    $gender = $_POST['gender'];
-    $nic = $_POST['nic'];
-    $phone = $_POST['contact'];
-
-    $result = mysqli_query($conn, "UPDATE users SET fullName='$fullName', userName='$uName', email='$Email', password='$pwd', cType='$type', gender='$gender', nicPass='$nic', contactNo='$phone' WHERE userName='$name'");
-
-    header("location:s_viewprofile.php");
-}
-?>
-
-<?php
-$name = $_SESSION['userName'];
-
-$result = mysqli_query($conn, "SELECT * FROM users WHERE userName='$name'");
-if ($result) {
-    if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_array($result)) {
-            $fullName = $row['fullName'];
-            $uName = $row['userName'];
-            $Email = $row['email'];
-            $pwd = $row['Password'];
-            $type = $row['cType'];
-            $gender = $row['gender'];
-            $nic = $row['nicPass'];
-            $phone = $row['contactNo'];
+    
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE userName='$name'");
+    if ($result) {
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $uName = $row['userName'];
+                $fullName = $row['fullName'];
+                $Email = $row['email'];
+                $pwd = $row['Password'];
+                $type = $row['cType'];
+                $gender = $row['gender'];
+                $nic = $row['nicPass'];
+                $phone = $row['contactNo'];
+            }
+        } else {
+            echo "No results found.";
         }
     } else {
-        echo "No results found.";
+        echo "Query execution failed: " . mysqli_error($conn);
     }
-} else {
-    echo "Query execution failed: " . mysqli_error($conn);
-}
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Edit Details</title>
-</head>
-
-<fieldset class="fieldset1">
-    <legend><h3><b>Your Details</b></h3></legend>
-    <form name="update_packages" action="s_profileEdit.php" method="post">
-
-        <label for="fullName">Full Name:</label><br>
-        <input type="text" name="fullName" id="fullName" value="<?php echo $fullName; ?>" required><br><br>
-
-        <label>User Name: </label><br>
-        <input type="text" name="userName" required value="<?php echo $_SESSION['userName']; ?>"><br><br>
-
-        <label for="email">Email Address:</label><br>
-        <input type="text" name="email" id="email" value="<?php echo $Email; ?>" required><br><br>
-
-        <label for="password">Password :</label><br>
-        <input type="password" name="password" id="password" value="<?php echo $pwd; ?>" required><br><br>
-
-
-        <label for="cType">Citizen Type:</label><br>
-        <input type="text" name="citizens" id="citizens" value="<?php echo $type; ?>" required><br><br>
-
+    ?>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Edit Details</title>
+    </head>
+    
+    <fieldset class="fieldset1">
+        <legend><h3><b>Your Details</b></h3></legend>
+        <form name="update_packages" action="s_profileEdit.php" method="post">
+    
+            <label>User Name: </label><br>
+            <input type="text" name="userName" required value="<?php echo $_SESSION['userName']; ?>"><br><br>
+    
+            <label for="fullName">Full Name:</label><br>
+            <input type="text" name="fullName" id="fullName" value="<?php echo $fullName; ?>" required><br><br>
+            
+            <label for="email">Email Address:</label><br>
+            <input type="text" name="email" id="email" value="<?php echo $Email; ?>" required><br><br>
+    
+            <label for="password">Password :</label><br>
+            <input type="password" name="password" id="password" value="<?php echo $pwd; ?>" required><br><br>
+    
+    
+            <label for="cType">Citizen Type:</label><br>
+            <input type="text" name="citizens" id="citizens" value="<?php echo $type; ?>" required><br><br>
+    
+            
+            <label for="gender">Gender :</label><br>
+            <input type="text" name="gender" id="gender" value="<?php echo $gender; ?>" required><br><br>
+    
+            <label for="nic">NIC/Passport No:</label><br>
+            <input type="text" name="nic" id="nic" value="<?php echo $nic; ?>" required><br><br>
+    
+            <label for="contact">Contact No:</label><br>
+            <input type="text" name="contact" id="contact" value="<?php echo $phone; ?>" required><br><br>
+    
+            
+        <input class="button bttn" type="submit" name="btn2" value="Update details" onclick="return confirmUpdate();">
         
-        <label for="gender">Gender :</label><br>
-        <input type="text" name="gender" id="gender" value="<?php echo $gender; ?>" required><br><br>
-
-        <label for="nic">NIC/Passport No:</label><br>
-        <input type="text" name="nic" id="nic" value="<?php echo $nic; ?>" required><br><br>
-
-        <label for="contact">Contact No:</label><br>
-        <input type="text" name="contact" id="contact" value="<?php echo $phone; ?>" required><br><br>
-
-		
-	<input class="button bttn" type="submit" name="btn2" value="Update details">
-	
-</form>
-</fieldset>
-</div>
-
-
-
-    <br> <br> <br> <br> <br> <br>
-
+    </form>
+    </fieldset>
+    </div>
+    
+    
+    
+        <br> <br> <br> <br> <br> <br>
      <!--Footer-->
      <footer>
         <div class="Mcontent">
@@ -244,6 +243,15 @@ if ($result) {
     </footer>
 
     <script src="s_js/main.js"></script>
+    <script src="s_js/main.js"></script>
+    <script>
+    function confirmUpdate() {
+    var txt = confirm("Are you sure?Do You want to Update?");
+    if(!txt) {
+      return false;
+    }
+  }
+  </script>
 </body>
 </html>
 

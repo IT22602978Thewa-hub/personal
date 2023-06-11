@@ -56,11 +56,13 @@ $UserID = $_SESSION['uID'];
     </header>
 
     <!-- view profile -->
-<div class="profile">
+    <br> <br> <br> <br> <br> <br>
+    
     <?php $name = $_SESSION['userName'] ?>
     <center>
     <div class = "h31">
         <h3>Welcome, <?php echo $name?>!!</h3>
+        <br>
     </div>
     </center>
 
@@ -72,31 +74,39 @@ $UserID = $_SESSION['uID'];
 		    $UserID = $_SESSION['uID'];
             $name = $_SESSION['userName'];
             echo "$UserID";
-		    $sql = "SELECT fullName,userName,email,password,cType,gender,nicPass,contactNo FROM users WHERE userName = '$name'";
+		    $sql = "SELECT userName,fullName,email,Password,cType,gender,nicPass,contactNo FROM users WHERE userName = '$name'";
 		    $result = $conn->query($sql);
 		
 	        if($result->num_rows > 0){
                 while($row = $result->fetch_assoc())
 		            {
 
-		        echo "<span>
-                    <center>
-                        <table>
-					            <lable>Full Name:  ".$row["fullName"]."  </label><br><br>
-					            <label>user Name:  ".$row["userName"]." </label><br><br>
-                                <label>Email Address:  ".$row["email"]." </label><br><br>
-                                <label>citizen Type:"  .$row["cType"]."  </label><br><br>
-                                <label>Gender:".$row["gender"]."  </label><br><br>
-                                <label>NIC/Passport No:".$row["nicPass"]."  </label><br><br>
-                                <label>contact No:".$row["contactNo"]." </label><br><br>
-                                <a href='s_profileEdit.php?ID=$row[userName]'> <input class='button bttn' type='submit' name='update' value='Update'> </a> 
-                                <a href='s_deleteProfile.php?ID=$row[userName];'>
-          <input class='button bttn' type='submit' name='delete' value='Delete' onclick='return confirmDelete();'>
-        </a>
-                        </table>
-                        </center>
-			    </span>";
-		        }	
+		        echo "<table class='table'width='85%'>
+                            
+                             
+                                <td>user Name:  ".$row["userName"]." </td>
+                    
+                            <tr>
+					            <td>Full Name:  ".$row["fullName"]."  </td>
+                               </tr>
+                                <tr>
+                                <td>Email Address:  ".$row["email"]." </td>
+                               </tr> 
+                            <tr>   
+                                <td>citizen Type:"  .$row["cType"]."  </td>
+                                </tr>
+                            <tr>
+                                <td>Gender:".$row["gender"]."  </td>
+                                </tr>
+
+                            <tr>
+                                <td>NIC/Passport No:".$row["nicPass"]."  </td>
+                                </tr>
+                            <tr>  
+                                <td>contact No:".$row["contactNo"]." </td>
+                                </tr>";
+                            }	
+                                echo "</table>";
             }
 	        else{
 		        echo "No results";
@@ -104,11 +114,21 @@ $UserID = $_SESSION['uID'];
 	        $conn->close();
 	    } 
     ?> 
-    <div class="imageprofile">
-            <img src="./s_images/profilephoto.jpg" alt="profile" width="350px" height="350px">
+       <center>
+
+       <a href='s_profileEdit.php?ID=$row[userName]'>
+        <input class='button bttn' type='submit' name='update' value='Update'>
+       </a>
+        <a href='s_deleteProfile.php?ID=$row[userName]'>
+        <input class='button bttn' type='submit' name='delete' value='Delete' onclick="return confirmDelete();">
+
+        </a>
+        <center>
+    <div class="profile1">
+            <img src="./s_images/icon5.png" alt="profile" width="250px" height="250px">
     </div>
 
-</div>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
    
    
     <!--Footer-->
@@ -211,5 +231,17 @@ $UserID = $_SESSION['uID'];
     </footer>
 
     <script src="s_js/main.js"></script>
+
+    <script>
+        
+        function confirmDelete() {
+          var txt = confirm("Are you sure?Do You want to DELETE?");
+          if(!txt) {
+            return false;
+          }
+        }
+      
+      
+              </script>
 </body>
 </html>

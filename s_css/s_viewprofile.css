@@ -156,112 +156,20 @@ header.sticky{
 
 /* profile */
 
-center {
-  text-align:  center;
-  margin: 10rem 25rem auto;
-  background-color: #a7a0a0;
-  width: 50%;
-  color: #282d33;
-  border-radius: 8px;
-  box-shadow: 4px 4px 4px #222222;
-}
-
-.center .button{
-  background-color: #282d33;
-}
-.info {
-  margin-top: 1rem;
-  background-color: #a7a0a0;
+.profile1{
+  float:left;
+  padding-top:-50px;
+  padding-bottom: 10px;
 }
 
 
-/* .profile {
-  margin-top: 12rem;
-  width: 100%;
+.h31{
+  font-size: medium;
+  color:wheat;
 }
 
-.profile .h31 {
-    z-index: 5;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: bold;
-    color: #a7a0a0;
-    margin-bottom: 4rem;
-    text-shadow: 2px 2px 1px #ddd;
-}
-
-.profile .information {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 4rem;
-}
-
-.profile .information .info {
-  width: 40%;
-  background-color: #dfe6e9;
-  padding: 50px;
-  border-radius: 8px;
-  color: #282d33;
-  font-weight: bold;
-  box-shadow: 4px 4px 4px #222222;
-}
-
-.profile .information .info1 label{
-  display: block;
-   outline: none;
-   font-size: 1rem;
-   color: #282d33;
-   border: 1px solid #282d33;
-   border-radius: 6px;
-   padding: 5px 50px;
-}
-
-.profile .information .info2 a{
-  color: #282d33;
-  padding: 10px 16px;
-  border-radius: 5px;
-  transition: all .45s ease;
-}
-
-.profile .information .info2 .button {
-  padding: 10px 16px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: all .45s ease;
-  box-shadow: 2px 2px 2px #222222;
-}
-
-.profile .information .info2 .button:hover {
-  transform: scale(1.1);
-}
-
-.profile .information .info2 .bttn1 {
-  background-color: #ebeb09;
-}
-
-.profile .information .info2 .bttn2 {
-  background-color: #de0c0c;
-} */
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@keyframes image {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+table{
+  padding-left: 30%;
 }
 
 /* footer */
@@ -484,4 +392,3 @@ footer {
   font-weight: 600;
   text-decoration: none;
 }
-

@@ -74,7 +74,7 @@ $Username = $_SESSION['userName'];
            <img src="s_images/image1.jpg" alt="slide1" width="725px" height="482px">
        </div>
        <div class="slide">
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+           <p>Come and walk along the wild trek.</p>
            <img src="s_images/image2.jpg" alt="slide2" width="725px" height="482px">
        </div>
        <div class="slide">
