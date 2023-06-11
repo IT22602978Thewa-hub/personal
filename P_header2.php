@@ -20,6 +20,7 @@ require 'dbh.inc.php';
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./P_Script.js"></script>
     <script src="./main_T.js"></script>
+    <script src="./main.js"></script>
    
 </head>
 <body>
