@@ -2,10 +2,8 @@
 
 <?php
 include 'dbh.inc.php';
-//$UName = $_SESSION['userName'];
-//$sql = "SELECT * FROM hotel_reservation ORDER BY Hotel_Res_ID DESC";
-$sql = "SELECT * FROM hotel_reservation ORDER BY Hotel_Res_ID DESC";
-//WHERE User_ID = $UName
+
+$sql = "SELECT * FROM `hotel_reservation` WHERE  `user_name` = '$Username' ORDER BY `Hotel_Res_ID` DESC";
 $result = $conn->query($sql);
 
 ?>

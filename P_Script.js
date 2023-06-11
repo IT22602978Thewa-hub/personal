@@ -1,3 +1,4 @@
+/*
 function validatemyForm() {
   // Get the values of the name and email fields
   let FullName = document.forms["myForm"]["FullName"].value;
@@ -102,6 +103,7 @@ var form = document.getElementById("myForm");
     form.reset(); // Clear form fields if navigating back
   }
 });
+*/
 
 //delete reservation
 function deleteRes() {

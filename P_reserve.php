@@ -15,7 +15,6 @@ if (isset($_POST['reserve'])){
     $No_Of_Adult = $_POST["countA"];
     $No_Of_Children = $_POST["countC"];
     $Special_Request = $_POST["SpecialRequest"];
-    //$UName = $_SESSION['userName'];
 
     $query = "SELECT `Package_ID` FROM `hotel_package` WHERE `Package_Name` = '$Package_Name'";
     $result = $conn->query($query);
@@ -38,8 +37,8 @@ if (isset($_POST['reserve'])){
 
             $totalPrice = $packagePrice2 * ($No_Of_Adult + $No_Of_Children) * $numNights;
         
-        $sql = "INSERT INTO `hotel_reservation`( `Package_ID`, `Full_Name`, `Email`, `Booking_For`, `Check_In_Date`, `Check_Out_Date`, `Room_Type`, `No_Of_Adult`, `No_Of_Children`,`Total_Price`, `Special_Request`) 
-        VALUES ( '$Package_ID', '$Full_Name', '$Email', '$Booking_For', '$Check_In_Date', '$Check_Out_Date', '$Room_Type', '$No_Of_Adult', '$No_Of_Children','$totalPrice','$Special_Request')";
+        $sql = "INSERT INTO `hotel_reservation`(`user_name`, `Package_ID`, `Full_Name`, `Email`, `Booking_For`, `Check_In_Date`, `Check_Out_Date`, `Room_Type`, `No_Of_Adult`, `No_Of_Children`,`Total_Price`, `Special_Request`) 
+        VALUES ('$Username', '$Package_ID', '$Full_Name', '$Email', '$Booking_For', '$Check_In_Date', '$Check_Out_Date', '$Room_Type', '$No_Of_Adult', '$No_Of_Children','$totalPrice','$Special_Request')";
             
         if ($conn->query($sql) === TRUE) {
             // Redirect to the view page
@@ -110,6 +109,113 @@ if (isset($_POST['reserve'])){
                     <input type="submit" id ="resbtn" name = "reserve" value="Reserve">
                     <!--<input type="submit" id ="resbtn" name = "reserve" value="Reserve" onclick="submit_form(); clearFormAndRedirect();">-->
                 </form>
+                <script>
+                    function validatemyForm() {
+                        // Get the values of the name and email fields
+                        let FullName = document.forms["myForm"]["FullName"].value;
+                        let Email = document.forms["myForm"]["Email"].value;
+                        let BookingFor = document.forms["myForm"]["BookingFor"].value;
+                        let countR = document.forms["myForm"]["countR"].value;
+                        let countA = document.forms["myForm"]["countA"].value;
+                        let countC = document.forms["myForm"]["countC"].value;
+                        let CheckIntime = document.forms["myForm"]["CheckIntime"].value;
+                        let CheckOuttime = document.forms["myForm"]["CheckOuttime"].value;
+
+                        // Perform validation
+                        if (FullName == "") {
+                            alert("Full Name must be filled out");
+                            return false;
+                        }
+                        
+                        if (Email == "") {
+                            alert("Email must be filled out");
+                            return false;
+                        }
+
+                        if (BookingFor == "") {
+                            alert("Booking For must be filled out");
+                            return false;
+                        }
+
+                        if (countR == "") {
+                            alert("Room Type must be filled out");
+                            return false;
+                        }
+
+                        if (countA == "") {
+                            alert("No Of Adults must be filled out");
+                            return false;
+                        }
+
+                        if (countC == "") {
+                            alert("No Of Children must be filled out");
+                            return false;
+                        }
+
+                        if (CheckIntime == "") {
+                            alert("Check In time must be filled out");
+                            return false;
+                        }
+
+                        if (CheckOuttime == "") {
+                            alert("Check Out time must be filled out");
+                            return false;
+                        }
+
+                        return true;
+                        }
+
+                        //Room count validation
+                        function validateRoomCount() {
+                        var roomCount = document.getElementById("countR").value;
+                        var adultCount = document.getElementById("countA").value;
+
+                        if (roomCount < adultCount) {
+                            alert("The Bed count cannot be less than the number of adults.");
+                            return false;
+                        } else {
+                            return true;
+                        }
+
+                        }
+
+                        //Date Pick
+                        function validateDates() {
+                        var checkInDate = new Date(document.getElementById("CheckIntime").value);
+                        var checkOutDate = new Date(document.getElementById("CheckOuttime").value);
+
+                        if (checkOutDate < checkInDate) {
+                            alert("Check-out date cannot be earlier than check-in date");
+                            return false;
+                        } else {
+                            return true;
+                        }
+
+                        }
+
+                        //disable previous dates
+                        var today = new Date().toISOString().slice(0, 16);
+                        document.getElementsByName("CheckIntime")[0].min = today;
+                        document.getElementsByName("CheckOuttime")[0].min = today;
+
+                        //Calling all form functions
+                        function validateForm() {
+                        var isDatesValid = validateDates();
+                        var isRoomCountValid = validateRoomCount();
+                        var isFormInvalid = validatemyForm();
+
+                        return isFormInvalid || isRoomCountValid || isDatesValid;
+                        }
+
+                        //clear form
+                        window.addEventListener("pageshow", function(event) {
+                        var form = document.getElementById("myForm");
+                        if (event.persisted) {
+                            form.reset(); // Clear form fields if navigating back
+                        }
+                        });
+                </script>
+
             </div>
         </div>
     </div> 

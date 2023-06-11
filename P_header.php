@@ -1,7 +1,6 @@
 <?php
 require 'dbh.inc.php';
-//session_start();
-//$UserID = $_SESSION['uID'];
+
 ?>
 
 <!DOCTYPE html>
