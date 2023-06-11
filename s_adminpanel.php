@@ -60,7 +60,7 @@ $Username = $_SESSION['userName'];
   <div class="button">
       <h1>Administrator Panel</h1>
       <div class="button1">
-         <a href="#">Hotel Administrator</a>
+         <a href="./view_packages_T.php">Hotel Administrator</a>
          <a href="./s_userAdmin.php">User Administrator</a>
       </div>
    </div>

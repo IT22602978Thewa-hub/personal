@@ -41,7 +41,7 @@
 
             <ul class="menu">
                 <li><a href="./r_main2.php">Home</a></li>
-                <li><a href="./view_packages_T.php">Safari Hotels</a></li>
+                <li><a href="./view_packages_T_pradi.php">Safari Hotels</a></li>
                 <li class="drop"><a href="#">Safari Tours<i class="fa-solid fa-caret-down"></i></a>
                     <ul class="submenu">
                         <li><a href="">Safari Jeep Reservation</a></li>
