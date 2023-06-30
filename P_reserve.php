@@ -110,7 +110,7 @@ if (isset($_POST['reserve'])){
                 </form>
                 <script>
                     function validatemyForm() {
-                        // Get the values of the name and email fields
+                        // Get the values of the fields
                         let FullName = document.forms["myForm"]["FullName"].value;
                         let Email = document.forms["myForm"]["Email"].value;
                         let BookingFor = document.forms["myForm"]["BookingFor"].value;
