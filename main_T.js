@@ -23,7 +23,7 @@ function searchTable() {
 function validateForm() {
     var adminId = document.getElementsByName("admin_Id_T")[0].value;
     var packageType = document.querySelector('input[name="Package_Type_T"]:checked').value;
-  var roomClass = document.querySelector('select[name="Room_Class_Id_T"]').value;
+    var roomClass = document.querySelector('select[name="Room_Class_Id_T"]').value;
 
     if (!validateAdminId(adminId)) {
       alert("Invalid Admin ID. Admin ID must be 5 characters long and start with a capital letter.");

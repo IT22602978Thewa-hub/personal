@@ -66,7 +66,7 @@ if (isset($_GET['edit'])) {
             <div class="transbox">
                 <!--update form-->
                 <div class="form">
-                    <form method="POST" action="" onsubmit="return validateForm()">
+                    <form method="POST" action="" name="myForm" id="myForm"  onsubmit="return validatemyForm()">
                         <fieldset>
                             <legend><span class="number">1</span>Reservation Details</legend>
                             <input type="text" id="FullName" name="FullName" value="<?php echo $row["Full_Name"]; ?>" placeholder="Full Name *" required autocomplete="off">
@@ -116,6 +116,7 @@ if (isset($_GET['edit'])) {
                         </fieldset>
                         <input type="submit" id="resbtn" name="update" value="Update">
                     </form>
+                    
                     <script>
                         function validatemyForm() {
                             // Get the values of the name and email fields
@@ -169,11 +170,22 @@ if (isset($_GET['edit'])) {
                                 return false;
                             }
 
-                            return true;
+                            if (!validateRoomCount()){
+                                return false;
+
+                            }
+                            if (!validateDates()){
+                                return false;
+
                             }
 
-                            //Room count validation
-                            function validateRoomCount() {
+                            alert("Successfully Updated!");
+
+                            return true;
+                        }
+
+                        //Room count validation
+                        function validateRoomCount() {
                             var roomCount = document.getElementById("countR").value;
                             var adultCount = document.getElementById("countA").value;
 
@@ -184,10 +196,10 @@ if (isset($_GET['edit'])) {
                                 return true;
                             }
 
-                            }
+                        }
 
-                            //Date Pick
-                            function validateDates() {
+                        //Date Pick
+                        function validateDates() {
                             var checkInDate = new Date(document.getElementById("CheckIntime").value);
                             var checkOutDate = new Date(document.getElementById("CheckOuttime").value);
 
@@ -198,29 +210,12 @@ if (isset($_GET['edit'])) {
                                 return true;
                             }
 
-                            }
+                        }
 
-                            //disable previous dates
-                            var today = new Date().toISOString().slice(0, 16);
-                            document.getElementsByName("CheckIntime")[0].min = today;
-                            document.getElementsByName("CheckOuttime")[0].min = today;
-
-                            //Calling all form functions
-                            function validateForm() {
-                            var isDatesValid = validateDates();
-                            var isRoomCountValid = validateRoomCount();
-                            var isFormInvalid = validatemyForm();
-
-                            return isFormInvalid || isRoomCountValid || isDatesValid;
-                            }
-
-                            //clear form
-                            window.addEventListener("pageshow", function(event) {
-                            var form = document.getElementById("myForm");
-                            if (event.persisted) {
-                                form.reset(); // Clear form fields if navigating back
-                            }
-                            });
+                        //disable previous dates
+                        var today = new Date().toISOString().slice(0, 16);
+                        document.getElementsByName("CheckIntime")[0].min = today;
+                        document.getElementsByName("CheckOuttime")[0].min = today;  
                     </script>
                 </div>
             </div>
